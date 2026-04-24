@@ -2,9 +2,34 @@ import mongoose from "mongoose";
 
 const appointmentSchema = new mongoose.Schema(
   {
-    pet: { type: mongoose.Schema.Types.ObjectId, ref: "Pet" },
-    service: { type: mongoose.Schema.Types.ObjectId, ref: "Service" },
-    date: Date
+    owner: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+      required: true
+    },
+    pet: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Pet",
+      required: true
+    },
+    service: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Service",
+      required: true
+    },
+    date: {
+      type: Date,
+      required: true
+    },
+    observacao: {
+      type: String,
+      trim: true
+    },
+    status: {
+      type: String,
+      enum: ["agendado", "concluido", "cancelado"],
+      default: "agendado"
+    }
   },
   { timestamps: true }
 );
