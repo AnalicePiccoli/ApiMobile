@@ -1,0 +1,102 @@
+Starting project at C:\Users\Analice\AppData\Local\repo\ApiMobile\petshop-app
+React Compiler enabled
+Starting Metro Bundler
+Waiting on http://localhost:8081
+Logs for your project will appear below.
+Web Bundled 1375ms node_modules\expo\AppEntry.js (542 modules)
+λ Bundled 1445ms node_modules\expo-router\node\render.js (1119 modules)
+Web Bundled 232ms node_modules\expo\AppEntry.js (543 modules)
+ LOG  [web] Logs will appear in the browser console
+λ Bundled 33ms node_modules\expo-router\node\render.js (1 module)
+Web node_modules\expo\AppEntry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web Bundled 401ms node_modules\expo\AppEntry.js (1 module)
+Web node_modules\expo\AppEntry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ Bundled 39ms node_modules\expo-router\node\render.js (1 module)
+Web Bundled 504ms node_modules\expo\AppEntry.js (1 module)
+Web node_modules\expo\AppEntry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ Bundled 35ms node_modules\expo-router\node\render.js (1 module)
+Web Bundled 1110ms node_modules\expo\AppEntry.js (1 module)
+λ Bundled 38ms node_modules\expo-router\node\render.js (1 module)
+Web Bundled 24ms node_modules\expo\AppEntry.js (1 module)
+Web Bundled 477ms node_modules\expo\AppEntry.js (1 module)
+ LOG  [web] Logs will appear in the browser console
+ ERROR  SyntaxError: C:\Users\Analice\AppData\Local\repo\ApiMobile\petshop-app\src\screens\Pets.js: Expected corresponding JSX closing tag for <TouchableOpacity>. (18:6)
+
+  16 |           <Ionicons name="create-outline" size={18} color={Colors.text} />
+  17 |         </TouchableOpacity>
+> 18 |       </View>
+     |       ^
+  19 |
+  20 |       <View style={styles.petContent}>
+  21 |         <View style={styles.petAvatar}>
+    at constructor (C:\Users\Analice\AppData\Local\repo\ApiMobile\petshop-app\node_modules\@babel\parser\lib\index.js:365:19)
+    at FlowParserMixin.raise (C:\Users\Analice\AppData\Local\repo\ApiMobile\petshop-app\node_modules\@babel\parser\lib\index.js:6599:19)
+    at FlowParserMixin.jsxParseElementAt (C:\Users\Analice\AppData\Local\repo\ApiMobile\petshop-app\node_modules\@babel\parser\lib\index.js:4727:16)
+    at FlowParserMixin.jsxParseElementAt (C:\Users\Analice\AppData\Local\repo\ApiMobile\petshop-app\node_modules\@babel\parser\lib\index.js:4698:32)
+    at FlowParserMixin.jsxParseElementAt (C:\Users\Analice\AppData\Local\repo\ApiMobile\petshop-app\node_modules\@babel\parser\lib\index.js:4698:32)
+    at FlowParserMixin.jsxParseElement (C:\Users\Analice\AppData\Local\repo\ApiMobile\petshop-app\node_modules\@babel\parser\lib\index.js:4749:17)
+    at FlowParserMixin.parseExprAtom (C:\Users\Analice\AppData\Local\repo\ApiMobile\petshop-app\node_modules\@babel\parser\lib\index.js:4759:19)
+    at FlowParserMixin.parseExprSubscripts (C:\Users\Analice\AppData\Local\repo\ApiMobile\petshop-app\node_modules\@babel\parser\lib\index.js:11081:23)
+    at FlowParserMixin.parseUpdate (C:\Users\Analice\AppData\Local\repo\ApiMobile\petshop-app\node_modules\@babel\parser\lib\index.js:11066:21)
+    at FlowParserMixin.parseMaybeUnary (C:\Users\Analice\AppData\Local\repo\ApiMobile\petshop-app\node_modules\@babel\parser\lib\index.js:11046:23)
+    at FlowParserMixin.parseMaybeUnaryOrPrivate (C:\Users\Analice\AppData\Local\repo\ApiMobile\petshop-app\node_modules\@babel\parser\lib\index.js:10899:61)
+    at FlowParserMixin.parseExprOps (C:\Users\Analice\AppData\Local\repo\ApiMobile\petshop-app\node_modules\@babel\parser\lib\index.js:10904:23)
+    at FlowParserMixin.parseMaybeConditional (C:\Users\Analice\AppData\Local\repo\ApiMobile\petshop-app\node_modules\@babel\parser\lib\index.js:10881:23)
+    at FlowParserMixin.parseMaybeAssign (C:\Users\Analice\AppData\Local\repo\ApiMobile\petshop-app\node_modules\@babel\parser\lib\index.js:10831:21)
+    at C:\Users\Analice\AppData\Local\repo\ApiMobile\petshop-app\node_modules\@babel\parser\lib\index.js:3498:39
+    at FlowParserMixin.tryParse (C:\Users\Analice\AppData\Local\repo\ApiMobile\petshop-app\node_modules\@babel\parser\lib\index.js:6907:20)
+    at FlowParserMixin.parseMaybeAssign (C:\Users\Analice\AppData\Local\repo\ApiMobile\petshop-app\node_modules\@babel\parser\lib\index.js:3498:18)
+    at C:\Users\Analice\AppData\Local\repo\ApiMobile\petshop-app\node_modules\@babel\parser\lib\index.js:10800:39
+    at FlowParserMixin.allowInAnd (C:\Users\Analice\AppData\Local\repo\ApiMobile\petshop-app\node_modules\@babel\parser\lib\index.js:12426:12)
+    at FlowParserMixin.parseMaybeAssignAllowIn (C:\Users\Analice\AppData\Local\repo\ApiMobile\petshop-app\node_modules\@babel\parser\lib\index.js:10800:17)
+    at FlowParserMixin.parseMaybeAssignAllowInOrVoidPattern (C:\Users\Analice\AppData\Local\repo\ApiMobile\petshop-app\node_modules\@babel\parser\lib\index.js:12493:17)
+    at FlowParserMixin.parseParenAndDistinguishExpression (C:\Users\Analice\AppData\Local\repo\ApiMobile\petshop-app\node_modules\@babel\parser\lib\index.js:11675:28)
+    at FlowParserMixin.parseParenAndDistinguishExpression (C:\Users\Analice\AppData\Local\repo\ApiMobile\petshop-app\node_modules\@babel\parser\lib\index.js:3591:18)
+    at FlowParserMixin.parseExprAtom (C:\Users\Analice\AppData\Local\repo\ApiMobile\petshop-app\node_modules\@babel\parser\lib\index.js:11331:23)
+    at FlowParserMixin.parseExprAtom (C:\Users\Analice\AppData\Local\repo\ApiMobile\petshop-app\node_modules\@babel\parser\lib\index.js:4764:20)
+    at FlowParserMixin.parseExprSubscripts (C:\Users\Analice\AppData\Local\repo\ApiMobile\petshop-app\node_modules\@babel\parser\lib\index.js:11081:23)
+    at FlowParserMixin.parseUpdate (C:\Users\Analice\AppData\Local\repo\ApiMobile\petshop-app\node_modules\@babel\parser\lib\index.js:11066:21)
+    at FlowParserMixin.parseMaybeUnary (C:\Users\Analice\AppData\Local\repo\ApiMobile\petshop-app\node_modules\@babel\parser\lib\index.js:11046:23)
+    at FlowParserMixin.parseMaybeUnaryOrPrivate (C:\Users\Analice\AppData\Local\repo\ApiMobile\petshop-app\node_modules\@babel\parser\lib\index.js:10899:61)
+    at FlowParserMixin.parseExprOps (C:\Users\Analice\AppData\Local\repo\ApiMobile\petshop-app\node_modules\@babel\parser\lib\index.js:10904:23)
+    at FlowParserMixin.parseMaybeConditional (C:\Users\Analice\AppData\Local\repo\ApiMobile\petshop-app\node_modules\@babel\parser\lib\index.js:10881:23)
+    at FlowParserMixin.parseMaybeAssign (C:\Users\Analice\AppData\Local\repo\ApiMobile\petshop-app\node_modules\@babel\parser\lib\index.js:10831:21)
+    at FlowParserMixin.parseMaybeAssign (C:\Users\Analice\AppData\Local\repo\ApiMobile\petshop-app\node_modules\@babel\parser\lib\index.js:3549:18)
+    at FlowParserMixin.parseExpressionBase (C:\Users\Analice\AppData\Local\repo\ApiMobile\petshop-app\node_modules\@babel\parser\lib\index.js:10784:23)
+    at C:\Users\Analice\AppData\Local\repo\ApiMobile\petshop-app\node_modules\@babel\parser\lib\index.js:10780:39
+    at FlowParserMixin.allowInAnd (C:\Users\Analice\AppData\Local\repo\ApiMobile\petshop-app\node_modules\@babel\parser\lib\index.js:12421:16)
+    at FlowParserMixin.parseExpression (C:\Users\Analice\AppData\Local\repo\ApiMobile\petshop-app\node_modules\@babel\parser\lib\index.js:10780:17)
+    at FlowParserMixin.parseReturnStatement (C:\Users\Analice\AppData\Local\repo\ApiMobile\petshop-app\node_modules\@babel\parser\lib\index.js:13142:28)
+    at FlowParserMixin.parseStatementContent (C:\Users\Analice\AppData\Local\repo\ApiMobile\petshop-app\node_modules\@babel\parser\lib\index.js:12798:21)
+    at FlowParserMixin.parseStatementLike (C:\Users\Analice\AppData\Local\repo\ApiMobile\petshop-app\node_modules\@babel\parser\lib\index.js:12767:17)
+    at FlowParserMixin.parseStatementLike (C:\Users\Analice\AppData\Local\repo\ApiMobile\petshop-app\node_modules\@babel\parser\lib\index.js:2918:24)
+    at FlowParserMixin.parseStatementListItem (C:\Users\Analice\AppData\Local\repo\ApiMobile\petshop-app\node_modules\@babel\parser\lib\index.js:12747:17)
+    at FlowParserMixin.parseBlockOrModuleBlockBody (C:\Users\Analice\AppData\Local\repo\ApiMobile\petshop-app\node_modules\@babel\parser\lib\index.js:13316:61)
+    at FlowParserMixin.parseBlockBody (C:\Users\Analice\AppData\Local\repo\ApiMobile\petshop-app\node_modules\@babel\parser\lib\index.js:13309:10)
+    at FlowParserMixin.parseBlock (C:\Users\Analice\AppData\Local\repo\ApiMobile\petshop-app\node_modules\@babel\parser\lib\index.js:13297:10)
+    at FlowParserMixin.parseFunctionBody (C:\Users\Analice\AppData\Local\repo\ApiMobile\petshop-app\node_modules\@babel\parser\lib\index.js:12100:24)
+    at FlowParserMixin.parseFunctionBody (C:\Users\Analice\AppData\Local\repo\ApiMobile\petshop-app\node_modules\@babel\parser\lib\index.js:2895:11)
+    at FlowParserMixin.parseFunctionBodyAndFinish (C:\Users\Analice\AppData\Local\repo\ApiMobile\petshop-app\node_modules\@babel\parser\lib\index.js:12086:10)
+    at FlowParserMixin.parseFunctionBodyAndFinish (C:\Users\Analice\AppData\Local\repo\ApiMobile\petshop-app\node_modules\@babel\parser\lib\index.js:2903:18)
+    at C:\Users\Analice\AppData\Local\repo\ApiMobile\petshop-app\node_modules\@babel\parser\lib\index.js:13445:12
+Web node_modules\expo\AppEntry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ Bundled 21ms node_modules\expo-router\node\render.js (1 module)
+Web Bundled 2264ms node_modules\expo\AppEntry.js (1 module)
+λ Bundled 39ms node_modules\expo-router\node\render.js (1 module)
+Web Bundled 379ms node_modules\expo\AppEntry.js (1 module)
+Web Bundled 246ms node_modules\expo\AppEntry.js (1 module)
+ LOG  [web] Logs will appear in the browser console
+Web node_modules\expo\AppEntry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ Bundled 51ms node_modules\expo-router\node\render.js (1 module)
+Web Bundled 476ms node_modules\expo\AppEntry.js (1 module)
+Web Bundled 29ms node_modules\expo\AppEntry.js (1 module)
+λ Bundled 45ms node_modules\expo-router\node\render.js (1 module)
+Web Bundled 411ms node_modules\expo\AppEntry.js (1 module)
+ LOG  [web] Logs will appear in the browser console
+Web node_modules\expo\AppEntry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+λ Bundled 18ms node_modules\expo-router\node\render.js (1 module)
+Web Bundled 559ms node_modules\expo\AppEntry.js (1 module)
+Web Bundled 40ms node_modules\expo\AppEntry.js (1 module)
+λ Bundled 55ms node_modules\expo-router\node\render.js (1 module)
+Web Bundled 375ms node_modules\expo\AppEntry.js (1 module)
+ LOG  [web] Logs will appear in the browser console

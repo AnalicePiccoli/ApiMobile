@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
-import { 
-  View, 
-  Text, 
-  TextInput, 
-  TouchableOpacity, 
-  StyleSheet, 
+import {
+  View,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  StyleSheet,
   Alert,
   KeyboardAvoidingView,
   Platform,
-  ScrollView
+  ScrollView,
 } from 'react-native';
-import api from '../services/api';
+import api, { setAuthToken, setCurrentUser } from '../services/api';
 
 export default function RegisterScreen({ navigation }) {
   const [nome, setNome] = useState('');
@@ -24,32 +24,40 @@ export default function RegisterScreen({ navigation }) {
 
   const handleRegister = async () => {
     if (!nome || !cpf || !email || !password || !telefone) {
-      Alert.alert('Erro', 'Por favor, preencha todos os campos obrigatórios (Nome, CPF, Email, Senha e Telefone).');
+      Alert.alert('Erro', 'Preencha nome, CPF, email, senha e telefone.');
       return;
     }
 
     if (password !== confirmPassword) {
-      Alert.alert('Erro', 'As senhas não coincidem.');
+      Alert.alert('Erro', 'As senhas nao coincidem.');
       return;
     }
 
     try {
       setLoading(true);
-      
-  
-      await api.post('/auth/register', { 
-        nome, 
-        cpf, 
-        email: email.trim().toLowerCase(), 
+
+      const response = await api.post('/auth/register', {
+        nome: nome.trim(),
+        cpf: cpf.trim(),
+        email: email.trim().toLowerCase(),
         password,
-        telefone,
-        endereco
+        telefone: telefone.trim(),
+        endereco: endereco.trim(),
       });
 
+      setAuthToken(response.data?.token);
+      setCurrentUser(response.data?.user);
+
       Alert.alert('Sucesso', 'Conta criada com sucesso!', [
-        { text: 'OK', onPress: () => navigation.navigate('Login') }
+        {
+          text: 'OK',
+          onPress: () =>
+            navigation.reset({
+              index: 0,
+              routes: [{ name: 'Home' }],
+            }),
+        },
       ]);
-      
     } catch (error) {
       const errorMessage = error.response?.data?.error || 'Erro ao cadastrar.';
       Alert.alert('Erro', errorMessage);
@@ -59,7 +67,7 @@ export default function RegisterScreen({ navigation }) {
   };
 
   return (
-    <KeyboardAvoidingView 
+    <KeyboardAvoidingView
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
       style={styles.container}
     >
@@ -77,7 +85,7 @@ export default function RegisterScreen({ navigation }) {
 
           <TextInput
             style={styles.input}
-            placeholder="CPF (apenas números) *"
+            placeholder="CPF (apenas numeros) *"
             keyboardType="numeric"
             value={cpf}
             onChangeText={setCpf}
@@ -103,7 +111,7 @@ export default function RegisterScreen({ navigation }) {
 
           <TextInput
             style={styles.input}
-            placeholder="Endereço (opcional)"
+            placeholder="Endereco (opcional)"
             value={endereco}
             onChangeText={setEndereco}
           />
@@ -124,8 +132,8 @@ export default function RegisterScreen({ navigation }) {
             onChangeText={setConfirmPassword}
           />
 
-          <TouchableOpacity 
-            style={styles.button} 
+          <TouchableOpacity
+            style={styles.button}
             onPress={handleRegister}
             disabled={loading}
           >
@@ -135,7 +143,9 @@ export default function RegisterScreen({ navigation }) {
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.linkButton} onPress={() => navigation.goBack()}>
-            <Text style={styles.linkText}>Já tem uma conta? <Text style={styles.linkTextBold}>Login</Text></Text>
+            <Text style={styles.linkText}>
+              Ja tem uma conta? <Text style={styles.linkTextBold}>Login</Text>
+            </Text>
           </TouchableOpacity>
         </View>
       </ScrollView>

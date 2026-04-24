@@ -1,16 +1,15 @@
 import React, { useState } from 'react';
-import { 
-  View, 
-  Text, 
-  TextInput, 
-  TouchableOpacity, 
-  StyleSheet, 
+import {
+  View,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  StyleSheet,
   Alert,
   KeyboardAvoidingView,
   Platform,
-  Image
 } from 'react-native';
-import api from '../services/api';
+import api, { setAuthToken, setCurrentUser } from '../services/api';
 
 export default function LoginScreen({ navigation }) {
   const [email, setEmail] = useState('');
@@ -25,24 +24,27 @@ export default function LoginScreen({ navigation }) {
 
     try {
       setLoading(true);
-      const response = await api.post('/auth/login', { 
-        email: email.trim().toLowerCase(), 
-        password 
+      const response = await api.post('/auth/login', {
+        email: email.trim().toLowerCase(),
+        password,
       });
-      
-      Alert.alert('Sucesso', `Bem-vindo ao Cantinho dos Peludinhos!`);
-      navigation.replace('Services'); 
-      
+
+      setAuthToken(response.data?.token);
+      setCurrentUser(response.data?.user);
+
+      Alert.alert('Sucesso', 'Bem-vindo ao Cantinho dos Peludinhos!');
+      navigation.replace('Home');
     } catch (error) {
+      const errorMessage = error.response?.data?.error || 'Email ou senha incorretos.';
       console.error(error);
-      Alert.alert('Erro', 'Email ou senha incorretos.');
+      Alert.alert('Erro', errorMessage);
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <KeyboardAvoidingView 
+    <KeyboardAvoidingView
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
       style={styles.container}
     >
@@ -53,7 +55,7 @@ export default function LoginScreen({ navigation }) {
         </View>
 
         <Text style={styles.title}>Bem-vindo!</Text>
-        <Text style={styles.subtitle}>Faça login para cuidar do seu pet</Text>
+        <Text style={styles.subtitle}>Faca login para cuidar do seu pet</Text>
 
         <TextInput
           style={styles.input}
@@ -72,8 +74,8 @@ export default function LoginScreen({ navigation }) {
           onChangeText={setPassword}
         />
 
-        <TouchableOpacity 
-          style={styles.button} 
+        <TouchableOpacity
+          style={styles.button}
           onPress={handleLogin}
           disabled={loading}
         >
@@ -82,12 +84,12 @@ export default function LoginScreen({ navigation }) {
           </Text>
         </TouchableOpacity>
 
-        <TouchableOpacity 
-          style={styles.linkButton} 
+        <TouchableOpacity
+          style={styles.linkButton}
           onPress={() => navigation.navigate('Register')}
         >
           <Text style={styles.linkText}>
-            Não tem uma conta? <Text style={styles.linkTextBold}>Cadastre-se</Text>
+            Nao tem uma conta? <Text style={styles.linkTextBold}>Cadastre-se</Text>
           </Text>
         </TouchableOpacity>
       </View>
@@ -111,21 +113,21 @@ const styles = StyleSheet.create({
   brandName: {
     fontSize: 28,
     fontWeight: 'bold',
-    color: '#6A5ACD', // Roxo 
+    color: '#6A5ACD',
     textAlign: 'center',
     fontFamily: Platform.OS === 'ios' ? 'HelveticaNeue-Bold' : 'sans-serif-condensed',
   },
   underline: {
     width: 60,
     height: 4,
-    backgroundColor: '#9370DB', // Lilás médio
+    backgroundColor: '#9370DB',
     borderRadius: 2,
     marginTop: 5,
   },
   title: {
     fontSize: 24,
     fontWeight: 'bold',
-    color: '#4B0082', // Indigo
+    color: '#4B0082',
     marginBottom: 5,
     textAlign: 'left',
   },
@@ -144,7 +146,7 @@ const styles = StyleSheet.create({
     marginBottom: 15,
     fontSize: 16,
     color: '#333',
-    elevation: 1, // Sombra leve no Android
+    elevation: 1,
   },
   button: {
     backgroundColor: '#6A5ACD',

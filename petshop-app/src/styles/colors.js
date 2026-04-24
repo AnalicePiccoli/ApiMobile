@@ -1,9 +1,10 @@
-// src/styles/colors.js
 export const Colors = {
-  primary: '#9370DB',   // Lilás Médio (Botões e Destaques)
-  secondary: '#E6E6FA', // Lavanda (Fundos e Cards)
-  accent: '#8A2BE2',    // Violeta (Ícones e Títulos)
+  primary: '#9370DB',
+  secondary: '#6A5ACD',
+  accent: '#8A2BE2',
+  background: '#F8F9FA',
+  inputBorder: '#E6E6FA',
   white: '#FFFFFF',
   gray: '#F5F5F5',
-  text: '#4B0082'       // Índigo para legibilidade
+  text: '#4B0082',
 };
